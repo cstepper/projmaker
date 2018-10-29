@@ -28,73 +28,24 @@ Then a new git repository gets initialized (hidden _.git_ folder in project work
 
 ## Current structure
 
+<!-- run in cmd: tree /f and copy output from cmd -->
+
+
 ```bash
-├───00_basedata
-│   ├───001_data
-│   └───002_metadata
-├───01_analysis
-│   ├───0101_data
-│   ├───0110_code
-│   │   ├───01100_r_functions
-│   │   ├───01101_r_scripts
-│   │   └───01102_r_markdowns
-│   ├───0120_figures
-│   ├───0121_leaflets
-│   ├───0130_checks
-│   └───0140_misc
-├───02_docu
-├───03_results
-└───04_presentations
-
-
-\---2018_SuperProject_deu
-    +---00_basedata
-    |   +---001_data
-    |   \---002_metadata
-    +---01_analysis
-    |   +---0101_data
-    |   +---0110_code
-    |   |   +---01100_r_functions
-    |   |   +---01101_r_scripts
-    |   |   \---01102_r_markdowns
-    |   +---0120_figures
-    |   +---0121_leaflets
-    |   +---0130_checks
-    |   \---0140_misc
-    +---02_docu
-    +---03_results
-    \---04_presentations
-
-
+├───00_basedata						# raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
+│   ├───001_data						# the data itself
+│   └───002_metadata					# documentation for the data
+├───01_analysis						# anything to do with analysis/work-in-progress
+│   ├───0101_data						# intermediate data sets, e.g. results from individual analysis modules (tip: name subfolders corresponding to your R-scripts and save your data)
+│   ├───0110_code						# all code files, i.e. R code, py code, SAS code, etc.
+│   │   ├───01100_r_functions				# R functions necessary for projects (longer than a 3-liner), but not worth to be put into a GIpackage; sourced within scripts to avoid code repetition	
+│   │   ├───01101_r_scripts					# R scripts for all analysis steps/modules, named in a comprehensible way (tip: number scrips in the order they need to be executed)	
+│   │   └───01102_r_markdowns				#  if applicable, R markdown files (eg. for documentations etc.)
+│   ├───0120_figures					# any static or interactive visualisations generated during the analysis
+│   ├───0121_leaflets					# any map visualisation generated during the analysis
+│   ├───0130_checks						# anything that is to be checked by people other than the analysis author, e.g. excel comparison files in purchasing power
+│   └───0140_misc						# place for things that somehow do not fit into any of the above, e.g. colour definitions for logos
+├───02_docu							# project documentation and final checks (Checkliste)
+├───03_results						# final results that are to be delivered to the client or that are to be pushed to our official products
+└───04_presentations				# things for kick-of/intermediate/final presentations
 ```
-
-
-00_basedata                  # raw (delivered) data sets and data documentation
-                             # input only - i.e. never to be overwridden!
-	001_data                     # the data itself
-	002_data_docu                # documentation for the data
-
-01_analysis                  # anything to do with analysis/work-in-progress
-
-	0101_data                    # intermediate data sets, e.g. base data enriched with own calculations
-	0102_final_data              # results from individual analysis modules, may be needed to create the final result
-
-	0110_r_functions             # any functions that are to be sourced within scripts, e.g. to avoid repetition
-	0111_r_scripts               # r scripts for all analysis steps/modules 
-								 # (associated with author code in multi-analyst-projects, 
-								 #  ie. 4-digit codes with the first digit representing the analyst 0000_*, 0010_*, 0011_*, 1000_*, ...)
-	0112_r_markdowns             # if applicable, r markdown files (eg. for documentations etc.)
-
-	0120_figures                 # if applicable, any static or interactive visualisations generated during the analysis
-
-	0121_leaflets		     # map visualisations done during the analysis
-
-	0130_checks                  # anything that is to be checked by people other than the analysis author, e.g. leaflets, excel, etc.
-
-	0140_misc                    # place for things that somehow do not fit into any of the above, e.g. color definitions for logos
-
-02_project_docu              # project documentation and final checks (Checkliste)
-
-03_results                   # final results that are to be delivered to the customer
-
-04_presentations             # things for kick-of/intermediate/final presentations
