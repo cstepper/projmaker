@@ -1,0 +1,1 @@
+tree [../example] /f > tree.txt
