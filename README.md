@@ -30,7 +30,6 @@ Then a new git repository gets initialized (hidden _.git_ folder in project work
 
 <!--- run in cmd: tree /f and copy output from cmd -->
 
-
 ```bash
 ├───00_basedata						# raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
 │   ├───001_data						# the data itself
