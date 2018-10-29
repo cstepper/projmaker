@@ -2,14 +2,15 @@
 
 ## Overview
 
-The _projmaker_ should help to setup a project at GeoInsights. 
+The _projmaker_ should help to setup a project at GeoInsights.
 In future projects, a common structure for folders and a common guideline for file naming should be applied.
 
-In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights.  
-Feel free to add or delete folders (e.g. *0111_regiograph_files*).
+In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights.
+Feel free to add or delete folders (e.g. *0111_regiograph_files*).  
 There should be ample room for individual modifications to create a best structure for any given project.
 Especially the top level folder structure should remain as proposed here.
-If you have suggestions please contact Christoph Stepper or Anja Waldmann.
+
+If you have suggestions please contact [Christoph Stepper](mailto:christoph.stepper@gfk.com) or [Anja Waldmann](mailto:anja.waldmann@gfk.com).
 
 ## Installation
 
@@ -19,8 +20,9 @@ Follow the user prompts to setup the folder structure (i.e. enter a valid name f
 
 ## Remarks
 
-It is advisable to use _RStudio Projects_ when working in a project mostly done in R. 
+It is advisable to use _RStudio Projects_ when working in a project mostly done in R.
 Doing so, you can use relative paths to navigate to files within the project and the projects keeps working when moved to another location (e.g. another drive).
+
 If you want to version control your project with _GIT_, navigate to the Project Options and select _GIT_ as Version control system. 
 Then a new git repository gets initialized (hidden _.git_ folder in project working directory and _.gitignore_ file).
 
@@ -43,6 +45,27 @@ Then a new git repository gets initialized (hidden _.git_ folder in project work
 ├───02_docu
 ├───03_results
 └───04_presentations
+
+
+\---2018_SuperProject_deu
+    +---00_basedata
+    |   +---001_data
+    |   \---002_metadata
+    +---01_analysis
+    |   +---0101_data
+    |   +---0110_code
+    |   |   +---01100_r_functions
+    |   |   +---01101_r_scripts
+    |   |   \---01102_r_markdowns
+    |   +---0120_figures
+    |   +---0121_leaflets
+    |   +---0130_checks
+    |   \---0140_misc
+    +---02_docu
+    +---03_results
+    \---04_presentations
+
+
 ```
 
 
