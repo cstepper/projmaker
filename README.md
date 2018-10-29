@@ -3,28 +3,30 @@
 ## Overview
 
 The _projmaker_ should help to setup a project at GeoInsights. 
-In future projects, a common structure for folders and a common guideline file naming should be applied.
+In future projects, a common structure for folders and a common guideline for file naming should be applied.
 
-In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights. 
-Feel free to add or delete folders (e.g. 0113_regiograph_files). There should be ample room for individual 
-modifications to create a best structure for any given project. Especially the top level folder structure should 
-remain as proposed here. If you have suggestions please contact Christoph Stepper or Anja Waldmann.
+In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights.  
+Feel free to add or delete folders (e.g. *0111_regiograph_files*).
+There should be ample room for individual modifications to create a best structure for any given project.
+Especially the top level folder structure should remain as proposed here.
+If you have suggestions please contact Christoph Stepper or Anja Waldmann.
 
 ## Installation
 
 Just copy the *makeproj.cmd* into the root directory where the new project should be locatad in and execute the file by left double-click.
 
-Follow the user prompts to setup the folder structure (i.e. enter a valid name for the study, etc.)
+Follow the user prompts to setup the folder structure (i.e. enter a valid name for the study, etc.).
 
 ## Remarks
 
-It is advisable to use _RStudio Projects_ when working in a project. Doing so, you can use relative paths to navigate to files within the project
-and the projects keeps working when moved to another location (e.g. another drive).
+It is advisable to use _RStudio Projects_ when working in a project mostly done in R. 
+Doing so, you can use relative paths to navigate to files within the project and the projects keeps working when moved to another location (e.g. another drive).
 If you want to version control your project with _GIT_, navigate to the Project Options and select _GIT_ as Version control system. 
 Then a new git repository gets initialized (hidden _.git_ folder in project working directory and _.gitignore_ file).
 
 ## Current structure
 
+```bash
 ├───00_basedata
 │   ├───001_data
 │   └───002_metadata
@@ -41,7 +43,7 @@ Then a new git repository gets initialized (hidden _.git_ folder in project work
 ├───02_docu
 ├───03_results
 └───04_presentations
-
+```
 
 
 00_basedata                  # raw (delivered) data sets and data documentation
