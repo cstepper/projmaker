@@ -12,19 +12,66 @@ Especially the top level folder structure should remain as proposed here.
 
 If you have suggestions please contact [Christoph Stepper](mailto:christoph.stepper@gfk.com) or [Anja Waldmann](mailto:anja.waldmann@gfk.com).
 
-## Installation
+## General Remarks
 
-Just copy the *makeproj.cmd* into the root directory where the new project should be locatad in and execute the file by left double-click.
+If you work with R, it is generally a good idea to set the __Workspace Options__ as follows:
 
-Follow the user prompts to setup the folder structure (i.e. enter a valid name for the study, etc.).
+1. Uncheck _Restore .RData into workspace at startup_
+2. Set _Save workspace to .RData on exit:_ to __Never__
+
+![workspace_settings](figures/workspace_settings_RStudio.png)	
+
+It is advisable to use _RStudio Projects_ when working in a project mostly done in R.
+Doing so, you can use relative paths to navigate to files within the project and the project keeps working when moved to another location (e.g. another drive).
+
+## Workflow
+
+### Generate folder structure
+
+To generate a valid folder structure, just follow these steps:
+
+1. Copy the *makeproj.cmd* into the root directory where the new project should be locatad in
+2. Execute the file by left double-click
+3. Follow the user prompts to setup the folder structure
+	+ Enter a valid name for the study, etc.
+	+ Delete *cmd* from the root directory (either automatically or manually)
+
+![makeproj_cmd](figures/makeproj_cmd.png)
+	
+### Setup RStudio Project
+
+To setup the project, open RStudio and execute:
+
+1. Navigate to _Project: (None)_ (topright in RStudio GUI)
+	![](figures/proj_1.png)
+2. Click on _New Project_
+	![](figures/proj_2.png)
+3. Select: Create Project in _Existing Directory_
+	![](figures/proj_3.png)
+4. Navigate to your project directory to set this as project working directory
+	![](figures/proj_4.png)
+	
+When a new RStudio project is created,
+* a project file (_*.proj_) is created within the project directory, containing various project settings,
+* a hidden directory (named _.Rproj.user_) is created, where project specific temporary files are stored .
+
+If you want to version control your project with _Git_, navigate to the Project Options and select _Git_ as Version control system. 
+Then a new git repository gets initialized (hidden _.git_ folder and _.gitignore_ file in project working directory).
+
+![](figures/project_options_1.png)
+![](figures/project_options_2.png)
+
+More info on working with RStudio projects can be found here:  
+[Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
 ## Remarks
 
-It is advisable to use _RStudio Projects_ when working in a project mostly done in R.
-Doing so, you can use relative paths to navigate to files within the project and the projects keeps working when moved to another location (e.g. another drive).
+If you want to spin R files (-> Markdown -> html) within a project, you should set the _R Markdown Option_ as follows:
+* Evaluate chunks in directory: _Project_
+ 
+![RMarkdown_settings](figures/RMarkdown_settings_RStudio.png)
 
-If you want to version control your project with _GIT_, navigate to the Project Options and select _GIT_ as Version control system. 
-Then a new git repository gets initialized (hidden _.git_ folder in project working directory and _.gitignore_ file).
+
 
 ## Current structure
 
