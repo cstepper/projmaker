@@ -21,7 +21,7 @@ If you work with R, it is generally a good idea to set the __Workspace Options__
 
 ![workspace_settings](figures/workspace_settings_RStudio.png)	
 
-It is advisable to use _RStudio Projects_ when working in a project mostly done in R.
+It is advisable to use _RStudio Projects_ when working in a project mostly done in R.  
 Doing so, you can use relative paths to navigate to files within the project and the project keeps working when moved to another location (e.g. another drive).
 
 ## Workflow
@@ -36,7 +36,7 @@ To generate a valid folder structure, just follow these steps:
 	+ Enter a valid name for the study, etc.
 	+ Delete *cmd* from the root directory (either automatically or manually)
 
-![makeproj_cmd](figures/makeproj_cmd.png)
+![makeproj_cmd](figures/makeproj_cmd.png){:height="36px" width="36px"}
 	
 ### Setup RStudio Project
 
