@@ -30,7 +30,7 @@ Then a new git repository gets initialized (hidden _.git_ folder in project work
 
 <!--- run in cmd: tree /f and copy output from cmd --->
 
-[//]: # run in cmd: tree /f and copy output from cmd
+[//]: # (run in cmd: tree /f and copy output from cmd)
 
 
 ```bash
