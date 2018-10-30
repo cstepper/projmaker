@@ -36,19 +36,26 @@ To generate a valid folder structure, just follow these steps:
 	+ Enter a valid name for the study, etc.
 	+ Delete *cmd* from the root directory (either automatically or manually)
 
-![makeproj_cmd](figures/makeproj_cmd.png){:height="36px" width="36px"}
+![makeproj_cmd](figures/makeproj_cmd.png)
 	
 ### Setup RStudio Project
 
 To setup the project, open RStudio and execute:
 
 1. Navigate to _Project: (None)_ (topright in RStudio GUI)
+
 	![](figures/proj_1.png)
+	
 2. Click on _New Project_
+
 	![](figures/proj_2.png)
+
 3. Select: Create Project in _Existing Directory_
+
 	![](figures/proj_3.png)
+
 4. Navigate to your project directory to set this as project working directory
+
 	![](figures/proj_4.png)
 	
 When a new RStudio project is created,
@@ -59,6 +66,7 @@ If you want to version control your project with _Git_, navigate to the Project 
 Then a new git repository gets initialized (hidden _.git_ folder and _.gitignore_ file in project working directory).
 
 ![](figures/project_options_1.png)
+
 ![](figures/project_options_2.png)
 
 More info on working with RStudio projects can be found here:  
