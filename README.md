@@ -1,4 +1,4 @@
-# projmaker ![](figures/projmaker_hex.png&classes=right)
+# projmaker ![](figures/projmaker_hex.png)
 ---
 
 ## Overview
