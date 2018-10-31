@@ -1,8 +1,9 @@
 ---
 output: 
-  # html_document
+  # html_document: 
+  #   css: github.css
   github_document:
-    html_preview: TRUE
+    html_preview: false
 ---
 
 [//]: # (README.md is generated from README.Rmd. Please edit that file)
@@ -54,7 +55,7 @@ If you work with R, it is generally a good idea to set the __Workspace Options__
 1. Uncheck _Restore .RData into workspace at startup_
 2. Set _Save workspace to .RData on exit:_ to __Never__
 
-![workspace_settings](figures/workspace_settings_RStudio.png)	
+![](figures/workspace_settings_RStudio.png)	
 
 It is advisable to use _RStudio Projects_ when working in a project mostly done in R.  
 Doing so, you can use relative paths to navigate to files within the project and the project keeps working when moved to another location (e.g. another drive).
@@ -71,7 +72,7 @@ To generate a valid folder structure, just follow these steps:
 	+ Enter a valid name for the study, etc.
 	+ Delete *cmd* from the root directory (either automatically or manually)
 
-![makeproj_cmd](figures/makeproj_cmd.png)
+![](figures/makeproj_cmd.png)
 	
 ### Setup RStudio Project
 
@@ -112,7 +113,7 @@ If you want to spin R files (--> Markdown --> html) within a project, you should
 
 * Evaluate chunks in directory: _Project_
  
-![RMarkdown_settings](figures/RMarkdown_settings_RStudio.png)
+![](figures/RMarkdown_settings_RStudio.png)
 
 
 

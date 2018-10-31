@@ -47,7 +47,7 @@ Options** as follows:
 1.  Uncheck *Restore .RData into workspace at startup*
 2.  Set *Save workspace to .RData on exit:* to **Never**
 
-![workspace\_settings](figures/workspace_settings_RStudio.png)
+![](figures/workspace_settings_RStudio.png)
 
 It is advisable to use *RStudio Projects* when working in a project
 mostly done in R.  
@@ -69,7 +69,7 @@ To generate a valid folder structure, just follow these steps:
       - Delete *cmd* from the root directory (either automatically or
         manually)
 
-![makeproj\_cmd](figures/makeproj_cmd.png)
+![](figures/makeproj_cmd.png)
 
 ### Setup RStudio Project
 
@@ -118,4 +118,4 @@ you should set the *R Markdown Option* as follows:
 
   - Evaluate chunks in directory: *Project*
 
-![RMarkdown\_settings](figures/RMarkdown_settings_RStudio.png)
+![](figures/RMarkdown_settings_RStudio.png)
