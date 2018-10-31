@@ -1,7 +1,8 @@
 ---
 output: 
   # html_document
-  github_document
+  github_document:
+    html_preview: TRUE
 ---
 
 [//]: # (README.md is generated from README.Rmd. Please edit that file)
@@ -90,7 +91,7 @@ To setup the project, open RStudio and execute:
 	
 When a new RStudio project is created,
 
-* a project file (named _*.proj_) is created within the project directory, containing various project settings,
+* a project file (named _\*.proj_) is created within the project directory, containing various project settings,
 * a hidden directory (named _.Rproj.user_) is created, where project specific temporary files are stored .
 
 ![](figures/proj_4.png)

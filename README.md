@@ -91,7 +91,7 @@ To setup the project, open RStudio and execute:
 
 When a new RStudio project is created,
 
-  - a project file (named \_\*.proj\_) is created within the project
+  - a project file (named *\*.proj*) is created within the project
     directory, containing various project settings,
   - a hidden directory (named *.Rproj.user*) is created, where project
     specific temporary files are stored .
