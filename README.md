@@ -1,5 +1,5 @@
 
-# projmaker ![](figures/projmaker_hex.png)
+# projmaker ![](figures/logo/projmaker_hex.png)
 
 ## Overview
 
@@ -21,22 +21,22 @@ Waldmann](mailto:anja.waldmann@gfk.com).
 ## Current structure
 
 ``` bash
-├───00_basedata                     # raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
-│   ├───001_data                        # the data itself
-│   └───002_metadata                    # documentation for the data
-├───01_analysis                     # anything to do with analysis/work-in-progress
-│   ├───0101_data                       # intermediate data sets, e.g. results from individual analysis modules (tip: name subfolders corresponding to your R-scripts and save your data)
-│   ├───0110_code                       # all code files, i.e. R code, py code, SAS code, etc.
-│   │   ├───01100_r_functions               # R functions necessary for projects (longer than a 3-liner), but not worth to be put into a GIpackage; sourced within scripts to avoid code repetition 
-│   │   ├───01101_r_scripts                 # R scripts for all analysis steps/modules, named in a comprehensible way (tip: number scrips in the order they need to be executed)    
-│   │   └───01102_r_markdowns               #  if applicable, R markdown files (eg. for documentations etc.)
-│   ├───0120_figures                    # any static or interactive visualisations generated during the analysis
-│   ├───0121_leaflets                   # any map visualisation generated during the analysis
-│   ├───0130_checks                     # anything that is to be checked by people other than the analysis author, e.g. excel comparison files in purchasing power
-│   └───0140_misc                       # place for things that somehow do not fit into any of the above, e.g. colour definitions for logos
-├───02_docu                         # project documentation and final checks (Checkliste)
-├───03_results                      # final results that are to be delivered to the client or that are to be pushed to our official products
-└───04_presentations                # things for kick-of/intermediate/final presentations
+â”œâ”€â”€â”€00_basedata                     # raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
+â”‚   â”œâ”€â”€â”€001_data                      # the data itself
+â”‚   â””â”€â”€â”€002_metadata                  # documentation for the data
+â”œâ”€â”€â”€01_analysis                     # anything to do with analysis/work-in-progress
+â”‚   â”œâ”€â”€â”€0101_data                     # intermediate data sets, e.g. results from individual analysis modules (tip: name subfolders corresponding to your R-scripts and save your data)
+â”‚   â”œâ”€â”€â”€0110_code                     # all code files, i.e. R code, py code, SAS code, etc.
+â”‚   â”‚   â”œâ”€â”€â”€01100_r_functions               # R functions necessary for projects (longer than a 3-liner), but not worth to be put into a GIpackage; sourced within scripts to avoid code repetition 
+â”‚   â”‚   â”œâ”€â”€â”€01101_r_scripts                 # R scripts for all analysis steps/modules, named in a comprehensible way (tip: number scrips in the order they need to be executed)    
+â”‚   â”‚   â””â”€â”€â”€01102_r_markdowns               #  if applicable, R markdown files (eg. for documentations etc.)
+â”‚   â”œâ”€â”€â”€0120_figures                  # any static or interactive visualisations generated during the analysis
+â”‚   â”œâ”€â”€â”€0121_leaflets                 # any map visualisation generated during the analysis
+â”‚   â”œâ”€â”€â”€0130_checks                       # anything that is to be checked by people other than the analysis author, e.g. excel comparison files in purchasing power
+â”‚   â””â”€â”€â”€0140_misc                     # place for things that somehow do not fit into any of the above, e.g. colour definitions for logos
+â”œâ”€â”€â”€02_docu                         # project documentation and final checks (Checkliste)
+â”œâ”€â”€â”€03_results                      # final results that are to be delivered to the client or that are to be pushed to our official products
+â””â”€â”€â”€04_presentations                # things for kick-of/intermediate/final presentations
 ```
 
 ## General Remarks
