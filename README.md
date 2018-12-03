@@ -1,4 +1,6 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # projmaker ![](figures/logo/projmaker_hex.png)
 
 ## Overview
