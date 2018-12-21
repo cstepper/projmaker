@@ -1,6 +1,4 @@
 REM Name: Make Project Directories
-REM Version: 0.1.0
-REM Date: 2018-10-19
 REM Author: Christoph Stepper (christoph.stepper@gfk.com)
 REM Description: Helpful tool to create the folder structure for a GeoInsights project.
 
@@ -32,8 +30,8 @@ ECHO.
 
 
 REM user input (Name of current study)
-ECHO Enter the study name you want to create the project structure for 
-ECHO (naming convention: YYYY_StudyName_ctr, e.g. 2018_DistribionPartner_deu - NO spaces, german umlauts, etc):
+ECHO Enter the study name you want to create the project structure for
+ECHO (naming convention: YYYY_StudyName_CTR, e.g. 2018_DistribionPartner_DEU - NO spaces, german umlauts, etc; ISO3 Country codes):
 :setname
 SET "currentStudy="
 set /P currentStudy=Enter Study Name: %=%
@@ -41,17 +39,17 @@ IF NOT DEFINED currentStudy GOTO :eof
 
 
 REM check if study name contains only letters + underscore characters
-echo.%currentStudy%| findstr /R "[^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_]" >nul 
+echo.%currentStudy%| findstr /R "[^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_]" >nul
 
 REM if ErrorLevel 1 (
 REM  REM echo %currentStudy% - OK
 REM ) ELSE (
-REM  echo %currentStudy% - invalid: no spaces, german umlauts, etc. 
+REM  echo %currentStudy% - invalid: no spaces, german umlauts, etc.
 REM  goto :setname
 REM  )
 
 if %ERRORLEVEL% EQU 0 (
-	echo %currentStudy% - invalid: no spaces, german umlauts, etc. 
+	echo %currentStudy% - invalid: no spaces, german umlauts, etc.
     goto :setname
 )
 
@@ -59,7 +57,7 @@ if %ERRORLEVEL% EQU 0 (
 REM check if first four characters are digits followed by an underscore
 
 REM SET start=%currentStudy:~0,4%
-REM echo.%start%| findstr /R "[^1234567890]" >nul 
+REM echo.%start%| findstr /R "[^1234567890]" >nul
 
 REM if ErrorLevel 0 (
 REM  REM echo %currentStudy% - OK
@@ -70,7 +68,7 @@ REM )
 
 
 SET start=%currentStudy:~0,5%
-echo.%start%| findstr /R "^[0-9][0-9][0-9][0-9]_$" >nul 
+echo.%start%| findstr /R "^[0-9][0-9][0-9][0-9]_$" >nul
 
 if %ERRORLEVEL% EQU 1 (
 	echo %currentStudy% - invalid: first four characters must be numbers, e.g. 2018, followed by an underscore
@@ -78,19 +76,19 @@ if %ERRORLEVEL% EQU 1 (
 )
 
 
-REM check if last 4 characters are underscore folloed by 3 small letters (ISO3)
+REM check if last 4 characters are underscore followed by 3 capital letters (ISO3)
 
 SET end=%currentStudy:~-4%
-echo.%end%| findstr /R "^_[abcdefghijklmnopqrstuvwxyz][abcdefghijklmnopqrstuvwxyz][abcdefghijklmnopqrstuvwxyz]" >nul 
+echo.%end%| findstr /R "^_[ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXYZ]" >nul
 
 if %ErrorLevel% EQU 0 (
  echo %currentStudy% - OK
 ) ELSE (
- echo %currentStudy% - invalid: last four characters must be an underscore folloed by 3 lowercase letters, indicating the ISO3, e.g. _deu
+ echo %currentStudy% - invalid: last four characters must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _deu
  goto :setname
 )
 
- 
+
 ECHO.
 CHOICE /C YN /N /T 10 /D N /M "Continue with current name: %currentStudy%? (Y/N):"
 IF errorlevel 2 EXIT
@@ -103,7 +101,7 @@ REM create study folder
 md %currentStudy%
 cd %currentStudy%
 
-REM make main subfolders 
+REM make main subfolders
 md 00_basedata 01_analysis 02_docu 03_results 04_presentations
 
 REM make subfolders in 00_basedata folder (might be adjusted in future)
