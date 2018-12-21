@@ -1,7 +1,7 @@
 Package: projmaker
 Title: Make Projekt Directories
-Version: 0.1.0
-Date: 2018-12-03
+Version: 0.1.1
+Date: 2018-12-21
 Author: Christoph Stepper (christoph.stepper@gfk.com)
 Description: Helpful tool to create the folder structure for a GeoInsights project.
 License: MIT + file LICENSE

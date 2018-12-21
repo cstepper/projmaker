@@ -31,7 +31,8 @@ ECHO.
 
 REM user input (Name of current study)
 ECHO Enter the study name you want to create the project structure for
-ECHO (naming convention: YYYY_StudyName_CTR, e.g. 2018_DistribionPartner_DEU - NO spaces, german umlauts, etc; ISO3 Country codes):
+ECHO (naming convention: YYYY_StudyName_CTR, e.g. 2018_DistribionPartner_DEU
+ECHO - NO spaces, german umlauts, etc; ISO3 Country codes):
 :setname
 SET "currentStudy="
 set /P currentStudy=Enter Study Name: %=%

@@ -16,6 +16,13 @@ There should be ample room for individual modifications to create a best
 structure for any given project. Especially the top level folder
 structure should remain as proposed here.
 
+Currently, the convention for naming project folders is
+*YYYY\_StudyName\_CTR*, e.g. *2018\_DistributionPartner\_DEU*. This
+means:
+
+  - no spaces, german umlauts, special characters, etc.
+  - capital ISO3 country codes.
+
 If you have suggestions please contact [Christoph
 Stepper](mailto:christoph.stepper@gfk.com) or [Anja
 Waldmann](mailto:anja.waldmann@gfk.com).
