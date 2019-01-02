@@ -31,7 +31,7 @@ ECHO.
 
 REM user input (Name of current study)
 ECHO Enter the study name you want to create the project structure for
-ECHO (naming convention: YYYY_StudyName_CTR, e.g. 2018_DistribionPartner_DEU
+ECHO (naming convention: YYYY_StudyName_CTR, e.g. 2018_SuperProject_CZE
 ECHO - NO spaces, german umlauts, etc; ISO3 Country codes):
 :setname
 SET "currentStudy="
@@ -85,7 +85,7 @@ echo.%end%| findstr /R "^_[ABCDEFGHIJKLMNOPQRSTUVWXYZ][ABCDEFGHIJKLMNOPQRSTUVWXY
 if %ErrorLevel% EQU 0 (
  echo %currentStudy% - OK
 ) ELSE (
- echo %currentStudy% - invalid: last four characters must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _deu
+ echo %currentStudy% - invalid: last four characters must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _CZE
  goto :setname
 )
 
