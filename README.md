@@ -3,6 +3,8 @@
 
 # projmaker ![](figures/logo/projmaker_hex.png)
 
+-----
+
 ## Overview
 
 The *projmaker* should help to setup a project at GeoInsights. In future
