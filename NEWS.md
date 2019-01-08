@@ -1,8 +1,9 @@
 # projmaker 0.1.1
 
-- changed naming convention to capital ISO3 country codes
-- renamed package DESCRIPTION file to PACKAGE, as it is no R package
-- updated documentation
+changes: 
+  - changed naming convention to capital ISO3 country codes
+  - renamed package DESCRIPTION file to PACKAGE, as it is no R package
+  - updated documentation
 
 
 # projmaker 0.1.0
