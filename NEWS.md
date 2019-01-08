@@ -1,4 +1,4 @@
-# projmaker 0.1.1
+## projmaker 0.1.1
 
 changes: 
   - changed naming convention to capital ISO3 country codes
@@ -6,7 +6,7 @@ changes:
   - updated documentation
 
 
-# projmaker 0.1.0
+## projmaker 0.1.0
 
 initial release
 
