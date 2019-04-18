@@ -62,6 +62,9 @@ If you work with R, it is generally a good idea to set the __Workspace Options__
 1. Uncheck _Restore .RData into workspace at startup_
 2. Set _Save workspace to .RData on exit:_ to __Never__
 
+Additionally, I strongly advice you to uncheck _Always save history (even when not saving .RData)_.
+Have you ever had a look into your saved .Rhistory files in any project? I didn't.
+
 ![](figures/workspace_settings_RStudio.png)	
 
 It is advisable to use _RStudio Projects_ when working in a project mostly done in R.  
