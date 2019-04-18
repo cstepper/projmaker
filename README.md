@@ -13,9 +13,15 @@ The *projmaker* should help to setup a project at GeoInsights. In future project
 In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights. Feel free to add or delete folders (e.g. *0111\_regiograph\_files*).
 There should be ample room for individual modifications to create a best structure for any given project. Especially the top level folder structure should remain as proposed here.
 
-Currently, the convention for naming project folders is \* for Market Data: *StudyName\_CTR\_YYYY*, e.g. *SuperProject\_CZE\_2019* \* for Client Projects: *ClientName\_CTR\_YYYYMM*, e.g. *SuperBrand\_CZE\_201904*.
+Currently, the convention for naming project folders is
 
-This means: \* no spaces, german umlauts, special characters, etc. \* *capital ISO3 country codes* (cf. <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3>).
+-   for Market Data: *StudyName\_CTR\_YYYY*, e.g. *SuperProject\_CZE\_2019*
+-   for Client Projects: *ClientName\_CTR\_YYYYMM*, e.g. *SuperBrand\_CZE\_201904*.
+
+This means:
+
+-   no spaces, german umlauts, special characters, etc.
+-   *capital ISO3 country codes* (cf. <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3>).
 
 If you have suggestions please contact [Christoph Stepper](mailto:christoph.stepper@gfk.com) or [Anja Waldmann](mailto:anja.waldmann@gfk.com).
 

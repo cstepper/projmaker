@@ -22,13 +22,15 @@ Feel free to add or delete folders (e.g. *0111_regiograph_files*).
 There should be ample room for individual modifications to create a best structure for any given project.
 Especially the top level folder structure should remain as proposed here.
 
-Currently, the convention for naming project folders is 
-* for Market Data: *StudyName_CTR_YYYY*, e.g. *SuperProject_CZE_2019*
-* for Client Projects: *ClientName_CTR_YYYYMM*, e.g. *SuperBrand_CZE_201904*. 
+Currently, the convention for naming project folders is
 
-This means:
-* no spaces, german umlauts, special characters, etc.
-* *capital ISO3 country codes* (cf. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3).
+  * for Market Data: *StudyName_CTR_YYYY*, e.g. *SuperProject_CZE_2019* 
+  * for Client Projects: *ClientName_CTR_YYYYMM*, e.g. *SuperBrand_CZE_201904*. 
+
+This means: 
+
+  * no spaces, german umlauts, special characters, etc. 
+  * *capital ISO3 country codes* (cf. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3).
 
 If you have suggestions please contact 
 [Christoph Stepper](mailto:christoph.stepper@gfk.com) or 
@@ -88,11 +90,11 @@ To generate a valid folder structure, just follow these steps:
 	
 Here are two examples for both cases:
 
-* Market Data
+  + Market Data
 
 ![](figures/makeproj_cmd_md.png)
 	
-* Client Project
+  + Client Project
 
 ![](figures/makeproj_cmd_cp.png)
 
