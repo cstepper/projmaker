@@ -22,13 +22,17 @@ Feel free to add or delete folders (e.g. *0111_regiograph_files*).
 There should be ample room for individual modifications to create a best structure for any given project.
 Especially the top level folder structure should remain as proposed here.
 
-Currently, the convention for naming project folders is *YYYY_StudyName_CTR*, 
-e.g. *2018_SuperProject_CZE*. This means:
+Currently, the convention for naming project folders is 
+* for Market Data: *StudyName_CTR_YYYY*, e.g. *SuperProject_CZE_2019*
+* for Client Projects: *ClientName_CTR_YYYYMM*, e.g. *SuperBrand_CZE_201904*. 
 
+This means:
 * no spaces, german umlauts, special characters, etc.
 * *capital ISO3 country codes* (cf. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3).
 
-If you have suggestions please contact [Christoph Stepper](mailto:christoph.stepper@gfk.com) or [Anja Waldmann](mailto:anja.waldmann@gfk.com).
+If you have suggestions please contact 
+[Christoph Stepper](mailto:christoph.stepper@gfk.com) or 
+[Anja Waldmann](mailto:anja.waldmann@gfk.com).
 
 ## Current structure
 
@@ -76,14 +80,22 @@ Doing so, you can use relative paths to navigate to files within the project and
 
 To generate a valid folder structure, just follow these steps:
 
-1. Copy the *makeproj.cmd* into the root directory where the new project should be locatad in
+1. Copy the *mkprojdir.cmd* into the root directory where the new project should be locatad in
 2. Execute the file by left double-click
 3. Follow the user prompts to setup the folder structure
 	+ Enter a valid name for the study, etc.
 	+ Delete *cmd* from the root directory (either automatically or manually)
-
-![](figures/makeproj_cmd.png)
 	
+Here are two examples for both cases:
+
+* Market Data
+
+![](figures/makeproj_cmd_md.png)
+	
+* Client Project
+
+![](figures/makeproj_cmd_cp.png)
+
 ### Setup RStudio Project
 
 To setup the project, open RStudio and execute:
