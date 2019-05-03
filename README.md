@@ -109,12 +109,12 @@ To generate a valid folder structure, just follow these steps:
 Here are two examples for both cases:
 
   - Market Data
-
-![](figures/create_project_marketdata.png)
+    
+    ![](figures/create_project_marketdata.png)
 
   - Client Project
-
-![](figures/create_project_clientproject.png)
+    
+    ![](figures/create_project_clientproject.png)
 
 ### Setup RStudio project
 
@@ -163,7 +163,7 @@ There might be some folders in your project directory tree which you did
 not use while working on your project.
 
 In order to keep our folder structure as tidy as possible, we’d advice
-to remove all empty folders after finishing your analysis.
+you to remove all empty folders after finishing your analysis.
 
 You can use the *cleanup\_project.cmd* to execute this task:
 
@@ -212,18 +212,19 @@ sit\!
 Check if the keys were correctly set in your registry:
 
 1.  Lauch **regedit.exe** from the Start menu
-
-![](figures/regedit.png)
+    
+    ![](figures/regedit.png)
 
 2.  Navigate to the **HKEY\_CLASSES\_ROOT** key and check if there are
     the two newly created keys *create\_project* and *cleanup\_project*.
-    You can evaluate the given value for your key (Default) string by
+    
+    ![](figures/registry_directory_background.png)
+
+3.  You can evaluate the given value for your key (Default) string by
     double-clicking *(Default)* and see what’s in the *Value data*
     field.
-
-![](figures/registry_directory_background.png)
-
-![](figures/registry_command_value.png)
+    
+    ![](figures/registry_command_value.png)
 
 Now you can easily open the batch scripts at any location. Just upen the
 Right Click Context Menu (by right clicking in the background - *not on
