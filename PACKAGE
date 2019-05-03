@@ -1,7 +1,7 @@
 Package: projmaker
-Title: Make Projekt Directories
+Title: Create Project Directories and Clean-up Directory Trees
 Version: 0.1.2
-Date: 2019-04-18
+Date: 2019-05-02
 Authors: Christoph Stepper (christoph.stepper@gfk.com), Miriam Buss (miriam.buss@gfk.com)
 Description: Helpful tool to create the folder structure for a GeoInsights project.
 License: MIT + file LICENSE

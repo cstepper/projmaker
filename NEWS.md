@@ -1,7 +1,15 @@
 ## projmaker 0.1.2
 
 changes: 
-  - 
+  - renamed *makeproj.cmd* to *create_project.cmd*
+  - extended *create_project.cmd* to
+    + cope with the new naming convention for marketdata studies (*studyname_CTR_YYYY*), 
+    + allow for the creation of directory trees for client projects (*projectname_CTR_YYYYMM*)
+  - added *cleanup_project.cmd* to remove empty directories in directory tree
+    after project finalization
+  - added registry files (*.reg*) for adding the batch scripts to the
+    Right Click Context Menu
+  - updated README
 
 ## projmaker 0.1.1
 

@@ -14,18 +14,25 @@ output:
 
 ## Overview
 
-The _projmaker_ should help to setup a project at GeoInsights.
-In future projects, a common structure for folders and a common guideline for file naming should be applied.
+The _projmaker_ should help to setup a project (*create_project.cmd*) at 
+GeoInsights and clean-up when ready (*cleanup_project.cmd*).
 
-In general, this is a corpus (minimal set) of folders structured according to a general workflow typical at GeoInsights.
-Feel free to add or delete folders (e.g. *0111_regiograph_files*).  
-There should be ample room for individual modifications to create a best structure for any given project.
+In future projects, a common structure for folders and a common guideline for 
+file naming should be applied.
+
+In general, this tools help you to setup a corpus (minimal set) of folders 
+structured according to a general workflow typical at GeoInsights.
+
+Feel free to add or delete folders (e.g. *0111_regiograph_files*).
+
+There should be ample room for individual modifications to create a best 
+structure for any given project.
 Especially the top level folder structure should remain as proposed here.
 
 Currently, the convention for naming project folders is
 
-  * for Market Data: *StudyName_CTR_YYYY*, e.g. *SuperProject_CZE_2019* 
-  * for Client Projects: *ClientName_CTR_YYYYMM*, e.g. *SuperBrand_CZE_201904*. 
+  * for Market Data: *studyname_CTR_YYYY*, e.g. *superproject_CZE_2019* 
+  * for Client Projects: *clientproject_CTR_YYYYMM*, e.g. *megaservice_CZE_201904*. 
 
 This means: 
 
@@ -37,6 +44,8 @@ If you have suggestions please contact
 [Anja Waldmann](mailto:anja.waldmann@gfk.com).
 
 ## Current structure
+
+At the moment, the directory tree for an initialized project looks like:
 
 [//]: # (run in cmd: tree /f and copy output from cmd)
 
@@ -61,7 +70,7 @@ If you have suggestions please contact
 ```
 
 
-## General Remarks
+## General remarks
 
 If you work with R, it is generally a good idea to set the __Workspace Options__ as follows:
 
@@ -69,36 +78,45 @@ If you work with R, it is generally a good idea to set the __Workspace Options__
 2. Set _Save workspace to .RData on exit:_ to __Never__
 
 Additionally, I strongly advice you to uncheck _Always save history (even when not saving .RData)_.
-Have you ever had a look into your saved .Rhistory files in any project? I didn't.
+Have you ever had a look into your saved *.Rhistory* files in any project? I didn't.
 
 ![](figures/workspace_settings_RStudio.png)	
 
 It is advisable to use _RStudio Projects_ when working in a project mostly done in R.  
-Doing so, you can use relative paths to navigate to files within the project and the project keeps working when moved to another location (e.g. another drive).
+Doing so, you can use relative paths to navigate to files within the project and 
+the project keeps working when moved to another location (e.g. another drive).
 
-## Workflow
+## Setup and workflow
+
+### Setup
+
+To use the *projmaker*, the easiest option would be to clone the repository to 
+your machine and use it from there. 
+
+If you only want to use one batch file, feel free to download it directly.
 
 ### Generate folder structure
 
 To generate a valid folder structure, just follow these steps:
 
-1. Copy the *mkprojdir.cmd* into the root directory where the new project should be locatad in
-2. Execute the file by left double-click
-3. Follow the user prompts to setup the folder structure
+1. Copy the *create_project.cmd* into the root directory where the new project 
+   should be locatad in.
+2. Execute the file by left double-click.
+3. Follow the user prompts to setup the folder structure.
 	+ Enter a valid name for the study, etc.
-	+ Delete *cmd* from the root directory (either automatically or manually)
+	+ Delete *cmd* from the root directory (either automatically or manually).
 	
 Here are two examples for both cases:
 
-  + Market Data
+* Market Data
 
-![](figures/makeproj_cmd_md.png)
+![](figures/create_project_marketdata.png)
 	
-  + Client Project
+* Client Project
 
-![](figures/makeproj_cmd_cp.png)
+![](figures/create_project_clientproject.png)
 
-### Setup RStudio Project
+### Setup RStudio project
 
 To setup the project, open RStudio and execute:
 
@@ -116,13 +134,18 @@ To setup the project, open RStudio and execute:
 	
 When a new RStudio project is created,
 
-* a project file (named _\*.proj_) is created within the project directory, containing various project settings,
-* a hidden directory (named _.Rproj.user_) is created, where project specific temporary files are stored .
+* a project file (named _\*.proj_) is created within the project directory, 
+  containing various project settings,
+* a hidden directory (named _.Rproj.user_) is created, where project specific 
+  temporary files are stored.
 
 ![](figures/proj_4.png)
 
-If you want to version control your project with _Git_, navigate to the Project Options and select _Git_ as Version control system. 
-Then a new git repository gets initialized (hidden _.git_ folder and _.gitignore_ file in project working directory).
+If you want to version control your project with _Git_, navigate to the Project 
+Options and select _Git_ as Version control system. 
+
+Then a new git repository gets initialized (hidden _.git_ folder and 
+_.gitignore_ file in project working directory).
 
 ![](figures/project_options_1.png)
 
@@ -131,7 +154,31 @@ Then a new git repository gets initialized (hidden _.git_ folder and _.gitignore
 More info on working with RStudio projects can be found here:  
 [Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
+
+### Clean-up empty directories
+
+There might be some folders in your project directory tree which you did 
+not use while working on your project.
+
+In order to keep our folder structure as tidy as possible, we'd advice to 
+remove all empty folders after finishing your analysis.
+
+You can use the *cleanup_project.cmd* to execute this task:
+
+1. Copy the *cleanup_project.cmd* into the root directory of your project 
+   (e.g. "P:/03_marketdata/CZE/superproject_CZE_2019").
+2. Execute the file by left double-click.
+3. Follow the user prompts to remove all empty directories (incl. subdirectories)
+	+ Delete *cmd* from the root directory (either automatically or manually)
+	
+Here's an examples for removing all empty directories:
+
+![](figures/cleanup_project.png)
+
+
 ## Remarks
+
+### Spinning R files
 
 If you want to spin R files (--> Markdown --> html) within a project, you should set the _R Markdown Option_ as follows:
 
@@ -140,4 +187,44 @@ If you want to spin R files (--> Markdown --> html) within a project, you should
 ![](figures/RMarkdown_settings_RStudio.png)
 
 
+### Windows Context Menu
+
+> NOTE: Make changes to the Windows *registry* with caution. Edits may harm the 
+  behavior of your computer.
+
+If you're tired of copying the batch files over and over again to the target 
+directories, you can add them to the _Right Click Menu_ of your file explorer.
+
+Therefore, you need to tweak the *registry*. Simply add two new keys for the 
+batch files into the following root in your registry.
+
+```
+Computer\HKEY_CLASSES_ROOT\Directory\Background\shell
+```
+
+You can add them either manually by opening the *Registry Editor* or by 
+executing the provided *.reg* files (in the "reg" directory) - make sure that 
+the links are pointing to the right location where your batch files sit!
+
+Check if the keys were correctly set in your registry:
+
+1. Lauch __regedit.exe__ from the Start menu
+
+![](figures/regedit.png)
+
+2. Navigate to the __HKEY_CLASSES_ROOT\Directory\Background\shell__ key 
+   and check if there are the two newly created keys *create_project* and 
+   *cleanup_project*. You can evaluate the given value for your key (Default) 
+   string by double-clicking *(Default)* and see what's in the *Value data* field.
+   
+![](figures/registry_directory_background.png)
+
+![](figures/registry_command_value.png)
+
+Now you can easily open the batch scripts at any location. Just upen the 
+Right Click Context Menu (by right clicking in the background - 
+*not on a file or directory*) and select the task you want to run.
+It gets executed in the current directory.
+
+![](figures/right_click_menu.png)
 

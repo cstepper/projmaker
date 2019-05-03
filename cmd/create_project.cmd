@@ -1,4 +1,4 @@
-REM Name: Make Project Directories
+REM Name: Create Project Directories
 REM Author: Christoph Stepper (christoph.stepper@gfk.com)
 REM Description: Helpful tool to create the folder structure for a GeoInsights project.
 
@@ -22,25 +22,51 @@ IF /I "%1"=="!ANSWERBATCH!" (
 	timeout 10 >NUL
 ) ELSE (
 	CHOICE /C YN /N /T 10 /D N /M "Do you wish to continue? (Y/N):"
-	IF errorlevel 2 EXIT
+	 IF errorlevel 2 (
+	    ECHO.
+	    pause>nul|set/p =Press any key to exit ...
+	    EXIT
+	 )
 	REM IF errorlevel 1 goto ...
 )
 REM CLS
+
+SET workdir=%cd%
+SET batchdir=%~dp0
+SET batchdir=%batchdir:~0,-1%
+
+ECHO.
+ECHO You create a project as subdirectory of:
+ECHO   %workdir%
 ECHO.
 
+
 :choosetype
+
+SET "marketdata=[1] - marketdata study"
+SET "clientproject=[2] - client project"
+
 REM user input: marketdata study or client project?
 ECHO Which kind of project do you want to create?
-ECHO [1] - marketdata study (studyname_CTR_YYYY)
-ECHO [2] - client project (projectname_CTR_YYYYMM)
+ECHO   %marketdata% (studyname_CTR_YYYY)
+ECHO   %clientproject% (projectname_CTR_YYYYMM)
+ECHO.
 SET "choice="
 set /P choice=Enter one number (1/2) %=%
 
-ECHO: You chose project type: %choice%
-ECHO.
+if '%choice%'=='1' (
+  ECHO.
+  ECHO You chose project type: %marketdata%
+  ECHO.
+  goto :setname
+)
 
-if '%choice%'=='1' goto :setname
-if '%choice%'=='2' goto :setname
+if '%choice%'=='2' (
+  ECHO.
+  ECHO You chose project type: %clientproject%
+  ECHO.
+  goto :setname
+)
 
 ECHO "%choice%" is not valid, try again
 ECHO.
@@ -48,9 +74,9 @@ goto :choosetype
 
 REM user input (Name of current study)
 ECHO Enter the study name you want to create the project structure for
-ECHO (naming convention: studyname_CTR_YYYY, e.g. superproject_CZE_2018,
-ECHO for marketdata studies and projectname_CTR_YYYYMM for client projects.
-ECHO - NO spaces, NO german umlauts, etc; ISO3 Country codes):
+ECHO   (naming convention: studyname_CTR_YYYY, e.g. superstudy_CZE_2018,
+ECHO   for marketdata studies and projectname_CTR_YYYYMM for client projects.
+ECHO   - NO spaces, NO german umlauts, etc; ISO3 Country codes):
 
 :setname
 SET "currentStudy="
@@ -63,7 +89,7 @@ echo.%currentStudy%| findstr /R "[^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
 
 if %ERRORLEVEL% EQU 0 (
 	ECHO.
-	echo %currentStudy% - invalid: no spaces, no german umlauts, etc.
+	echo %currentStudy% -- invalid: no spaces, no german umlauts, etc.
   ECHO.
   goto :setname
 )
@@ -85,7 +111,8 @@ if %ErrorLevel% EQU 0 (
  REM echo %currentStudy% - OK
 ) ELSE (
  ECHO.
- echo %currentStudy% - invalid for type %choice%: last 5 characters must be an underscore followed by 4 digits, indicating the year, e.g. _2019
+ ECHO %currentStudy% -- invalid for type %marketdata%:
+ ECHO   last 5 characters must be an underscore followed by 4 digits, indicating the year, e.g. _2019
  ECHO.
  goto :setname
 )
@@ -101,7 +128,8 @@ if %ErrorLevel% EQU 0 (
  echo %currentStudy% - OK
 ) ELSE (
  ECHO.
- echo %currentStudy% - invalid: central part must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _CZE
+ echo %currentStudy% -- invalid:
+ ECHO   central part must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _CZE
  ECHO.
  goto :setname
 )
@@ -121,7 +149,8 @@ if %ErrorLevel% EQU 0 (
  REM echo %currentStudy% - OK
 ) ELSE (
  ECHO.
- echo %currentStudy% - invalid for type %choice%: last 7 characters must be an underscore followed by 6 digits, indicating the year and month, e.g. _201904
+ ECHO %currentStudy% -- invalid for type %clientproject%:
+ ECHO   last 7 characters must be an underscore followed by 6 digits, indicating the year and month, e.g. _201904
  ECHO.
  goto :setname
 )
@@ -136,7 +165,8 @@ if %ErrorLevel% EQU 0 (
  echo %currentStudy% - OK
 ) ELSE (
  ECHO.
- echo %currentStudy% - invalid: central part must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _CZE
+ echo %currentStudy% -- invalid:
+ ECHO   central part must be an underscore followed by 3 capital letters, indicating the ISO3, e.g. _CZE
  ECHO.
  goto :setname
 )
@@ -151,7 +181,11 @@ REM create directory structure for clear organisation of an analysis project
 
 ECHO.
 CHOICE /C YN /N /T 10 /D N /M "Create directory structure with current name: %currentStudy%? (Y/N):"
-IF errorlevel 2 EXIT
+IF errorlevel 2 (
+	ECHO.
+	pause>nul|set/p =Press any key to exit ...
+	EXIT
+)
 REM IF errorlevel 1 goto ...
 
 REM create study folder
@@ -194,13 +228,24 @@ IF /I "%1"=="!ANSWERBATCH!" (
 	REM don't ask anything, as a batch process is running.
 	timeout 10 >NUL
 ) ELSE (
-	CHOICE /C YN /N /T 10 /D N /M "Should the cmd-file be deleted? (Y/N):"
-	IF errorlevel 2 EXIT
-	REM IF errorlevel 1 goto ...
+    IF NOT %workdir% == %batchdir% (
+      REM if current working directory is identical with the full path to the batch file's directory
+      pause>nul|set/p =Press any key to exit ...
+      EXIT
+    ) ELSE (
+	    CHOICE /C YN /N /T 10 /D N /M "Should the cmd-file be deleted? (Y/N):"
+	    IF errorlevel 2 (
+	      ECHO.
+	      pause>nul|set/p =Press any key to exit ...
+	      EXIT
+	    )
+	    REM IF errorlevel 1 goto ...
+    )
 )
 
 DEL "%~f0"
 
-pause
+ECHO.
+pause>nul|set/p =Press any key to exit ...
 
 ENDLOCAL
