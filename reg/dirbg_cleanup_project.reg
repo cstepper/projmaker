@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\cleanup_project]
 @="&Cleanup Here"
-"Icon"="%SystemRoot%\\System32\\shell32.dll,71"
+"Icon"="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\figures\\ico\\broom_proj.ico"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\cleanup_project\command]
 @="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\cmd\\cleanup_project.cmd \"%V\""
