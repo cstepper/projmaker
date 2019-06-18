@@ -5,4 +5,4 @@ Windows Registry Editor Version 5.00
 "Icon"="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\figures\\ico\\broom_proj.ico"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\cleanup_project\command]
-@="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\cmd\\cleanup_project.cmd \"%V\""
+@="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\cmd\\cleanup_project.cmd pushd \"%V\""

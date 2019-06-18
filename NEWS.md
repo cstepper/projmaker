@@ -1,3 +1,9 @@
+## projmaker 0.1.3
+
+changes: 
+  - modified registry files (*.reg*) for adding the batch scripts to the
+    Right Click Context Menu - now it works for paths with spaces as well.
+
 ## projmaker 0.1.2
 
 changes: 
