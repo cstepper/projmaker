@@ -1,8 +1,8 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\create_project]
-@="&Hot Proj Here"
-"Icon"="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\figures\\ico\\hot_proj.ico"
+@="&Create Project Here"
+"Icon"="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\figures\\ico\\create_proj.ico"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\create_project\command]
 @="C:\\Users\\christoph.stepper\\Documents\\_GEOMGI\\GIdailyhelpers\\projmaker\\cmd\\create_project.cmd pushd \"%V\""
