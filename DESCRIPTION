@@ -1,7 +1,7 @@
 Package: projmaker
 Title: Easily Create Project Directories and Clean-up Directory
     Trees
-Version: 0.1.5
+Version: 0.1.4
 Date: 2019-07-23
 Description: Helpful tool to easily create the folder structure
     for a GeoInsights project.
