@@ -1,3 +1,10 @@
+## projmaker 0.1.4
+
+changes: 
+  - modified registry files (*.reg*) for new icons. 
+  - renamed PACKAGE back to DESCRIPTION
+  - changed BuildType: None in projmaker.Rproj
+
 ## projmaker 0.1.3
 
 changes: 
