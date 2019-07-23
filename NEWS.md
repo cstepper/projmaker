@@ -1,4 +1,4 @@
-## projmaker 0.1.4
+## projmaker 0.1.4 (2019-07-23)
 
 changes: 
   - modified registry files (*.reg*) for new icons. 
