@@ -203,11 +203,7 @@ md 001_data 002_metadata
 REM make subfolders in 01_analysis folder (might be adjusted in future)
 cd ..
 cd 01_analysis
-md 0101_data
-md 0110_code
-md 0120_figures 0121_leaflets
-md 0130_checks
-md 0140_misc
+md 0101_data 0110_code 0120_figures 0121_leaflets 0130_checks 0140_misc
 
 REM make subfolders in 0110_code
 cd 0110_code
