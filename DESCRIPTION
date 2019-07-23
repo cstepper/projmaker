@@ -3,9 +3,9 @@ Title: Easily Create Project Directories and Clean-up Directory
     Trees
 Version: 0.1.4
 Date: 2019-07-23
+Authors: Christoph Stepper (christoph.stepper@gfk.com), Miriam
+    Buss (miriam.buss@gfk.com)
 Description: Helpful tool to easily create the folder structure
     for a GeoInsights project.
 License: MIT + file LICENSE
-Authors: Christoph Stepper (christoph.stepper@gfk.com), Miriam
-    Buss (miriam.buss@gfk.com)
 Encoding: UTF-8
