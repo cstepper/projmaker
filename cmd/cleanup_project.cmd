@@ -24,6 +24,11 @@ ECHO.
 ECHO Clean-up Project Structure - Delete empty Directories
 ECHO.
 
+
+SET workdir=%cd%
+SET batchdir=%~dp0
+SET batchdir=%batchdir:~0,-1%
+
 REM Security Question
 IF /I "%1"=="!ANSWERBATCH!" (
 	REM don't ask anything, as a batch process is running.
@@ -32,16 +37,11 @@ IF /I "%1"=="!ANSWERBATCH!" (
 	CHOICE /C YN /N /T 10 /D N /M "Do you wish to continue? (Y/N):"
 	 IF errorlevel 2 (
 	    ECHO.
-	    pause>nul|set/p =Press any key to exit ...
-	    EXIT
+	    goto :exitprogram
 	 )
 	REM IF errorlevel 1 goto ...
 )
-REM CLS
 
-SET workdir=%cd%
-SET batchdir=%~dp0
-SET batchdir=%batchdir:~0,-1%
 
 REM This is the core for folder removal.
 
@@ -52,8 +52,7 @@ ECHO.
 CHOICE /C YN /N /T 10 /D N /M "Should all empty folders in the current directory be removed? (Y/N):"
 IF errorlevel 2 (
 	ECHO.
-	pause>nul|set/p =Press any key to exit ...
-	EXIT
+	goto :exitprogram
 )
 REM IF errorlevel 1 goto ...
 
@@ -70,6 +69,7 @@ ECHO All empty directories removed in:
 ECHO   %cd%.
 ECHO.
 
+:exitprogram
 IF /I "%1"=="!ANSWERBATCH!" (
 	REM don't ask anything, as a batch process is running.
 	timeout 10 >NUL
@@ -89,9 +89,11 @@ IF /I "%1"=="!ANSWERBATCH!" (
     )
 )
 
-DEL "%~f0"
+
 
 ECHO.
-pause>nul|set/p =Press any key to exit ...
+pause>nul|set/p =Press any key delete the cmd-file and exit ...
+
+DEL "%~f0"
 
 ENDLOCAL
