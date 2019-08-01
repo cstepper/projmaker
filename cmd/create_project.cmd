@@ -16,6 +16,10 @@ ECHO.
 ECHO Create GfK Geomarketing Project Structure
 ECHO.
 
+SET workdir=%cd%
+SET batchdir=%~dp0
+SET batchdir=%batchdir:~0,-1%
+
 REM Security Question
 IF /I "%1"=="!ANSWERBATCH!" (
 	REM don't ask anything, as a batch process is running.
@@ -24,16 +28,10 @@ IF /I "%1"=="!ANSWERBATCH!" (
 	CHOICE /C YN /N /T 10 /D N /M "Do you wish to continue? (Y/N):"
 	 IF errorlevel 2 (
 	    ECHO.
-	    pause>nul|set/p =Press any key to exit ...
-	    EXIT
+		  goto :exitprogram
 	 )
 	REM IF errorlevel 1 goto ...
 )
-REM CLS
-
-SET workdir=%cd%
-SET batchdir=%~dp0
-SET batchdir=%batchdir:~0,-1%
 
 ECHO.
 ECHO You create a project as subdirectory of:
@@ -42,7 +40,6 @@ ECHO.
 
 
 :choosetype
-
 SET "marketdata=[1] - marketdata study"
 SET "clientproject=[2] - client project"
 
@@ -183,8 +180,7 @@ ECHO.
 CHOICE /C YN /N /T 10 /D N /M "Create directory structure with current name: %currentStudy%? (Y/N):"
 IF errorlevel 2 (
 	ECHO.
-	pause>nul|set/p =Press any key to exit ...
-	EXIT
+	goto :exitprogram
 )
 REM IF errorlevel 1 goto ...
 
@@ -209,17 +205,50 @@ REM make subfolders in 0110_code
 cd 0110_code
 md 01100_r_functions 01101_r_scripts 01102_r_markdowns
 
-REM CLS
-
 ECHO.
 ECHO All subfolders created.
-ECHO(
+
+
+:rstudioproj
+REM write rstudio proj file to directory if desired
+
+ECHO.
 ECHO It is recommended to work with RStudio Projects (Rproj File) in order to ensure a smooth workflow.
-ECHO(
-ECHO Have fun with the analysis :-)
+ECHO.
+CHOICE /C YN /N /T 10 /D N /M "Do you want to setup an RStudio Project (Rproj File) in the current directory: %currentStudy%? (Y/N):"
+IF errorlevel 2 (
+	ECHO.
+	goto :exitprogram
+)
+REM IF errorlevel 1 goto ...
+
+cd %workdir%/%currentStudy%
+
+(
+  echo Version: 1.0
+  echo.
+  echo RestoreWorkspace: Default
+  echo SaveWorkspace: Default
+  echo AlwaysSaveHistory: Default
+  echo.
+  echo EnableCodeIndexing: Yes
+  echo UseSpacesForTab: Yes
+  echo NumSpacesForTab: 2
+  echo Encoding: UTF-8
+  echo.
+  echo RnwWeave: Sweave
+  echo LaTeX: pdfLaTeX
+  echo.
+  echo AutoAppendNewline: Yes
+  echo StripTrailingWhitespace: Yes
+) > %currentStudy%.Rproj
+
+ECHO.
+ECHO RStudio project successfully setup.
+EcHO Open the project and have fun working with it.
 ECHO.
 
-
+:exitprogram
 IF /I "%1"=="!ANSWERBATCH!" (
 	REM don't ask anything, as a batch process is running.
 	timeout 10 >NUL
@@ -239,9 +268,9 @@ IF /I "%1"=="!ANSWERBATCH!" (
     )
 )
 
-DEL "%~f0"
-
 ECHO.
-pause>nul|set/p =Press any key to exit ...
+pause>nul|set/p =Press any key to delete cmd-file and exit ...
+
+DEL "%~f0"
 
 ENDLOCAL
