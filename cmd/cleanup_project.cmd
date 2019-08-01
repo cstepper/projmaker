@@ -60,7 +60,7 @@ for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do (
   set abs=%%d
   ECHO Try to remove: !abs:%cd%\=! 
   rd "%%d"
-  )
+)
 
 REM CLS
 
