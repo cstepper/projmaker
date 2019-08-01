@@ -1,3 +1,9 @@
+## projmaker 0.1.5 (2019-08-01)
+
+changes: 
+  - added new option to *create_project.cmd* to automatically setup an 
+    RStudio Project (Rproj File) if desired.
+  
 ## projmaker 0.1.4 (2019-07-23)
 
 changes: 

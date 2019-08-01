@@ -1,7 +1,7 @@
 Package: projmaker
 Title: Easily Create Project Directories and Clean-up Directory
     Trees
-Version: 0.1.4
+Version: 0.1.5
 Authors: Christoph Stepper (christoph.stepper@gfk.com), Miriam
     Buss (miriam.buss@gfk.com)
 Description: Helpful tool to easily create the folder structure
