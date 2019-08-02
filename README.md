@@ -84,7 +84,8 @@ Doing so, you can use relative paths to navigate to files within the
 project and the project keeps working when moved to another location
 (e.g. another drive).
 
-See more below in section [Setup RStudio project](#Rproj).
+See more below in section [Setup RStudio
+project](###%20Setup%20RStudio%20project).
 
 ## Setup and workflow
 

@@ -87,7 +87,7 @@ It is advisable to use _RStudio Projects_ when working in a project mostly done 
 Doing so, you can use relative paths to navigate to files within the project and 
 the project keeps working when moved to another location (e.g. another drive).
 
-See more below in section [Setup RStudio project](#Rproj).
+See more below in section [Setup RStudio project](### Setup RStudio project).
 
 
 ## Setup and workflow
@@ -122,7 +122,7 @@ Here are two examples for both cases:
 
   ![](figures/create_project_clientproject.png)
 
-### Setup RStudio project {#Rproj}
+### Setup RStudio project
 
 To setup the _RStudio_ project, you have two options:
 
