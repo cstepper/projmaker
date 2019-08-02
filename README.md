@@ -85,7 +85,7 @@ project and the project keeps working when moved to another location
 (e.g. another drive).
 
 See more below in section [Setup RStudio
-project](###%20Setup%20RStudio%20project).
+project](###-setup-rstudio-project).
 
 ## Setup and workflow
 
