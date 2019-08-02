@@ -124,11 +124,33 @@ Here are two examples for both cases:
 
 ### Setup RStudio project
 
-To setup the _RStudio_ project, you have two options:
+When a new RStudio project is created,
+
+* a project file (named _\*.Rproj_) is created within the project directory, 
+  containing various project settings,
+* a hidden directory (named _.Rproj.user_) is created, where project specific 
+  temporary files are stored.
+
+![](figures/proj_4.png)
+
+If you want to version control your project with _Git_, navigate to the Project 
+Options and select _Git_ as Version control system. 
+
+Then a new git repository gets initialized (hidden _.git_ folder and 
+_.gitignore_ file in project working directory).
+
+![](figures/project_options_1.png)
+
+![](figures/project_options_2.png)
+
+More info on working with RStudio projects can be found here (worth reading):  
+[Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
+To setup your _RStudio_ project, you have two options:
 
 #### 1. Directly create project file (named _\*.Rproj_) within *create_project.cmd* 
 
-This file contains a predefined set of project settings:
+This file contains a predefined set of project options:
 
 ```bash
 Version: 1.0
@@ -149,6 +171,9 @@ AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 ```
 
+I might change these settings, if you continue to keep the global options in 
+_RStudio_ untouched and save the *.Rhistory* files in your projects. 
+See section [General remarks](#general-remarks) above.
 
 #### 2. Use the RStudio IDE and execute the following: 
 
@@ -164,29 +189,6 @@ StripTrailingWhitespace: Yes
 
 	![](figures/proj_3.png)
 	
- 	
-	
-When a new RStudio project is created,
-
-* a project file (named _\*.Rproj_) is created within the project directory, 
-  containing various project settings,
-* a hidden directory (named _.Rproj.user_) is created, where project specific 
-  temporary files are stored.
-
-![](figures/proj_4.png)
-
-If you want to version control your project with _Git_, navigate to the Project 
-Options and select _Git_ as Version control system. 
-
-Then a new git repository gets initialized (hidden _.git_ folder and 
-_.gitignore_ file in project working directory).
-
-![](figures/project_options_1.png)
-
-![](figures/project_options_2.png)
-
-More info on working with RStudio projects can be found here:  
-[Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
 
 ### Clean-up empty directories
@@ -210,7 +212,7 @@ Here's an examples for removing all empty directories:
 ![](figures/cleanup_project.png)
 
 
-## Remarks
+## Further Notes
 
 ### Spinning R files
 
