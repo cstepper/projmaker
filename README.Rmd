@@ -2,15 +2,13 @@
 output: 
   # html_document:
   #   css: github.css
-  github_document:
-    html_preview: false
+  github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # projmaker ![](figures/logo/projmaker_hex.png)
 
------
 
 ## Overview
 
@@ -20,7 +18,7 @@ GeoInsights and clean-up when ready (*cleanup_project.cmd*).
 In future projects, a common structure for folders and a common guideline for 
 file naming should be applied.
 
-In general, this tools help you to setup a corpus (minimal set) of folders 
+In general, these tools help you to setup a corpus (minimal set) of folders 
 structured according to a general workflow typical at GeoInsights.
 
 Feel free to add or delete folders (e.g. *0111_regiograph_files*).
@@ -51,7 +49,7 @@ At the moment, the directory tree for an initialized project looks like:
 
 
 ```bash
-├───00_basedata						# raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
+├───00_basedata						# raw (delivered) data sets and data documentation; input only - i.e. never to be overwritten!
 │   ├───001_data						# the data itself
 │   └───002_metadata					# documentation for the data
 ├───01_analysis						# anything to do with analysis/work-in-progress
@@ -72,7 +70,7 @@ At the moment, the directory tree for an initialized project looks like:
 
 ## General remarks
 
-If you work with R, it is generally a good idea to set the __Workspace Options__ as follows:
+If you work with _R_, it is generally a good idea to set the __Workspace Options__ as follows:
 
 1. Uncheck _Restore .RData into workspace at startup_
 2. Set _Save workspace to .RData on exit:_ to __Never__
@@ -80,11 +78,17 @@ If you work with R, it is generally a good idea to set the __Workspace Options__
 Additionally, I strongly advice you to uncheck _Always save history (even when not saving .RData)_.
 Have you ever had a look into your saved *.Rhistory* files in any project? I didn't.
 
+You can specify your settings in the _RStudio Options_ menu.
+
 ![](figures/workspace_settings_RStudio.png)	
 
 It is advisable to use _RStudio Projects_ when working in a project mostly done in R.  
+
 Doing so, you can use relative paths to navigate to files within the project and 
 the project keeps working when moved to another location (e.g. another drive).
+
+See more below in section [Setup RStudio project](#Rproj).
+
 
 ## Setup and workflow
 
@@ -104,6 +108,8 @@ To generate a valid folder structure, just follow these steps:
 2. Execute the file by left double-click.
 3. Follow the user prompts to setup the folder structure.
 	+ Enter a valid name for the study, etc.
+	+ Create directory structure.
+	+ (Optionally) setup *RStudio Project*.
 	+ Delete *cmd* from the root directory (either automatically or manually).
 	
 Here are two examples for both cases:
@@ -116,11 +122,37 @@ Here are two examples for both cases:
 
   ![](figures/create_project_clientproject.png)
 
-### Setup RStudio project
+### Setup RStudio project {#Rproj}
 
-To setup the project, open RStudio and execute:
+To setup the _RStudio_ project, you have two options:
 
-1. Navigate to _Project: (None)_ (topright in RStudio GUI) and click on _New Project_
+#### 1. Directly create project file (named _\*.Rproj_) within *create_project.cmd* 
+
+This file contains a predefined set of project settings:
+
+```bash
+Version: 1.0
+
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
+
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes
+```
+
+
+#### 2. Use the RStudio IDE and execute the following: 
+
+1. Navigate to _Project: (None)_ (topright in RStudio IDE) and click on _New Project_
 
 	![](figures/proj_1.png)
 	
@@ -132,9 +164,11 @@ To setup the project, open RStudio and execute:
 
 	![](figures/proj_3.png)
 	
+ 	
+	
 When a new RStudio project is created,
 
-* a project file (named _\*.proj_) is created within the project directory, 
+* a project file (named _\*.Rproj_) is created within the project directory, 
   containing various project settings,
 * a hidden directory (named _.Rproj.user_) is created, where project specific 
   temporary files are stored.

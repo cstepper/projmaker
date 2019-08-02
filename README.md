@@ -3,8 +3,6 @@
 
 # projmaker ![](figures/logo/projmaker_hex.png)
 
------
-
 ## Overview
 
 The *projmaker* should help to setup a project (*create\_project.cmd*)
@@ -13,7 +11,7 @@ at GeoInsights and clean-up when ready (*cleanup\_project.cmd*).
 In future projects, a common structure for folders and a common
 guideline for file naming should be applied.
 
-In general, this tools help you to setup a corpus (minimal set) of
+In general, these tools help you to setup a corpus (minimal set) of
 folders structured according to a general workflow typical at
 GeoInsights.
 
@@ -42,11 +40,10 @@ Waldmann](mailto:anja.waldmann@gfk.com).
 
 ## Current structure
 
-At the moment, the directory tree for an initialized project looks
-like:
+At the moment, the directory tree for an initialized project looks like:
 
 ``` bash
-├───00_basedata                     # raw (delivered) data sets and data documentation; input only - i.e. never to be overwridden!
+├───00_basedata                     # raw (delivered) data sets and data documentation; input only - i.e. never to be overwritten!
 │   ├───001_data                        # the data itself
 │   └───002_metadata                    # documentation for the data
 ├───01_analysis                     # anything to do with analysis/work-in-progress
@@ -66,7 +63,7 @@ like:
 
 ## General remarks
 
-If you work with R, it is generally a good idea to set the **Workspace
+If you work with *R*, it is generally a good idea to set the **Workspace
 Options** as follows:
 
 1.  Uncheck *Restore .RData into workspace at startup*
@@ -76,13 +73,18 @@ Additionally, I strongly advice you to uncheck *Always save history
 (even when not saving .RData)*. Have you ever had a look into your saved
 *.Rhistory* files in any project? I didn’t.
 
+You can specify your settings in the *RStudio Options* menu.
+
 ![](figures/workspace_settings_RStudio.png)
 
 It is advisable to use *RStudio Projects* when working in a project
-mostly done in R.  
+mostly done in R.
+
 Doing so, you can use relative paths to navigate to files within the
 project and the project keeps working when moved to another location
 (e.g. another drive).
+
+See more below in section [Setup RStudio project](#Rproj).
 
 ## Setup and workflow
 
@@ -103,6 +105,8 @@ To generate a valid folder structure, just follow these steps:
 2.  Execute the file by left double-click.
 3.  Follow the user prompts to setup the folder structure.
       - Enter a valid name for the study, etc.
+      - Create directory structure.
+      - (Optionally) setup *RStudio Project*.
       - Delete *cmd* from the root directory (either automatically or
         manually).
 
@@ -118,9 +122,34 @@ Here are two examples for both cases:
 
 ### Setup RStudio project
 
-To setup the project, open RStudio and execute:
+To setup the *RStudio* project, you have two options:
 
-1.  Navigate to *Project: (None)* (topright in RStudio GUI) and click on
+#### 1\. Directly create project file (named *\*.Rproj*) within *create\_project.cmd*
+
+This file contains a predefined set of project settings:
+
+``` bash
+Version: 1.0
+
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
+
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes
+```
+
+#### 2\. Use the RStudio IDE and execute the following:
+
+1.  Navigate to *Project: (None)* (topright in RStudio IDE) and click on
     *New Project*
     
     ![](figures/proj_1.png)
@@ -136,7 +165,7 @@ To setup the project, open RStudio and execute:
 
 When a new RStudio project is created,
 
-  - a project file (named *\*.proj*) is created within the project
+  - a project file (named *\*.Rproj*) is created within the project
     directory, containing various project settings,
   - a hidden directory (named *.Rproj.user*) is created, where project
     specific temporary files are stored.
