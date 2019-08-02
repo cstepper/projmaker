@@ -215,7 +215,7 @@ REM write rstudio proj file to directory if desired
 ECHO.
 ECHO It is recommended to work with RStudio Projects (Rproj File) in order to ensure a smooth workflow.
 ECHO.
-CHOICE /C YN /N /T 10 /D N /M "Do you want to setup an RStudio Project (Rproj File) in the current directory: %currentStudy%? (Y/N):"
+CHOICE /C YN /N /T 10 /D N /M "Setup RStudio Project in the current directory: %currentStudy%? (Y/N):"
 IF errorlevel 2 (
 	ECHO.
 	goto :exitprogram
@@ -244,9 +244,10 @@ cd %workdir%/%currentStudy%
 ) > %currentStudy%.Rproj
 
 ECHO.
-ECHO RStudio project successfully setup.
-EcHO Open the project and have fun working with it.
+ECHO RStudio project successfully created. Open the project and have fun working with it.
 ECHO.
+
+REM TODO eventually add start option to automatically open RStudio Project.
 
 :exitprogram
 IF /I "%1"=="!ANSWERBATCH!" (
