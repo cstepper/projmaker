@@ -7,8 +7,10 @@ REM Remove Empty Directories GUI; http://www.jonasjohn.de/red.htm
 REM DelEmpty.exe command line tool; http://www.intelliadmin.com/index.php/downloads/
 
 REM Make sure, that correct sort command is selected
-REM Check with where sort --> should be "C:\Windows\System32\sort.exe"
-REM Remove all Rtools related entries from System PATH if necessary and restart your machine
+REM Check with 'where sort' --> first entry should be "C:\Windows\System32\sort.exe"
+REM Remove all Rtools related entries from System PATH if necessary
+REM (or put "C:\Rtools\bin" to the last position)
+REM and restart your machine
 
 @ECHO OFF
 
@@ -46,7 +48,7 @@ IF /I "%1"=="!ANSWERBATCH!" (
 REM This is the core for folder removal.
 
 ECHO.
-ECHO Current working directory: 
+ECHO Current working directory:
 ECHO   %cd%
 ECHO.
 CHOICE /C YN /N /T 10 /D N /M "Should all empty folders in the current directory be removed? (Y/N):"
@@ -58,7 +60,7 @@ REM IF errorlevel 1 goto ...
 
 for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do (
   set abs=%%d
-  ECHO Try to remove: !abs:%cd%\=! 
+  ECHO Try to remove: !abs:%cd%\=!
   rd "%%d"
 )
 
